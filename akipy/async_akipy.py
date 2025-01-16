@@ -49,7 +49,7 @@ class Akinator(SyncAkinator):
             "sid": self.theme,
             "cm": str(self.child_mode).lower()
         }
-        self.client = httpx.AsyncClient()
+        self.client = httpx.AsyncClient(http2=True)
         try:
             req = (await async_request_handler(url=url, method="POST", data=data, client=self.client)).text
             

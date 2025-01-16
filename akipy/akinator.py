@@ -75,7 +75,7 @@ class Akinator:
             "sid": self.theme,
             "cm": str(self.child_mode).lower()
         }
-        self.client = httpx.Client()
+        self.client = httpx.Client(http2=True)
         try:
             req = request_handler(url=url, method='POST', data=data, client=self.client).text
             

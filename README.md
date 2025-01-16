@@ -50,7 +50,7 @@ import akipy
 aki = akipy.Akinator()
 aki.start_game()
 
-while not aki.win:
+while not aki.finished:
     ans = input(str(aki) + "\n\t")
     if ans == "b":
         try:
